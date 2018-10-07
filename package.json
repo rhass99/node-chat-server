@@ -1,0 +1,35 @@
+{
+  "name": "chat-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf app",
+    "build": "npm run clean && mkdir app && babel ./src -s -d ./app --copy-files",
+    "production": "node ./bin/prod",
+    "prepush": "npm run build && rm -rf node_modules",
+    "register": "NODE_ENV=development node -r ./bin/dev",
+    "babel-node": "NODE_ENV=development babel-node",
+    "dev": "nodemon --exec npm run babel-node -- ./src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhass99/node-chat-server.git"
+  },
+  "author": "Rami H",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhass99/node-chat-server/issues"
+  },
+  "homepage": "https://github.com/rhass99/node-chat-server#readme",
+  "dependencies": {
+    "websocket": "^1.0.28"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "babel-register": "6.26.0",
+    "dotenv": "6.0.0",
+    "nodemon": "1.18.4"
+  }
+}
