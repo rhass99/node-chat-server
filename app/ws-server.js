@@ -46,6 +46,9 @@ const handleIO = socket => {
     });
 
     socket.on('message', msg => {
+        if (msg.clientMsg === "deleteall") {
+            history = [];
+        }
         const historyObj = {
             time: new Date().getTime(),
             text: htmlEntities(msg.clientMsg),
