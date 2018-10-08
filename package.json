@@ -10,7 +10,7 @@
     "prepush": "npm run build && rm -rf node_modules",
     "register": "NODE_ENV=development node -r ./bin/dev",
     "babel-node": "NODE_ENV=development babel-node",
-    "dev": "nodemon --exec npm run babel-node -- ./src/app.js"
+    "dev": "nodemon --exec npm run babel-node -- ./src/ws-server.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/rhass99/node-chat-server#readme",
   "dependencies": {
-    "websocket": "^1.0.28"
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "socket.io": "2.1.1"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
